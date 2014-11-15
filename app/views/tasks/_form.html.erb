@@ -1,0 +1,39 @@
+<%= form_for(@task) do |f| %>
+
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :due_on %><br>
+    <%= f.text_field :due_on, :'data-provide' => "datepicker", :'data-date-format' => "yyyy/mm/dd" %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.collection_select :category, Category.all, :id, :title %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker(dateFormat,'yyyy-mm-dd');
+  });
+</script>
+
+<% end %>

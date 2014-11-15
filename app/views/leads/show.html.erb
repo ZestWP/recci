@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<%
+  status = Status.find_by_id(@lead.status)
+  source = Source.find_by_id(@lead.source)
+  interested = Interested.find_by_id(@lead.interested)
+  
+  %>
+<p>
+  <strong>First name:</strong>
+  <%= @lead.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @lead.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lead.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lead.phone %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @lead.company %>
+</p>
+
+<p>
+  <strong>Interested:</strong>
+  <%= interested.try(:title) %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= status.try(:title) %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+   <%= source.try(:title) %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @lead.comment %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @lead.address %>
+</p>
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>

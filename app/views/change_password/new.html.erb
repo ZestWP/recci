@@ -1,0 +1,17 @@
+<h1>Change Password</h1>  
+  
+<%= form_tag change_password_path do %>
+  <div class="field">  
+    <%= label_tag :old_password %>  
+    <%= text_field_tag :old_password, params[:old_password] %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :new_password %>  
+    <%= text_field_tag :new_password, params[:new_password] %>  
+  </div>
+  <div class="field">  
+    <%= label_tag :confirm_new_password %>  
+    <%= text_field_tag :confirm_new_password, params[:confirm_new_password] %>  
+  </div>
+  <div class="actions"><%= submit_tag "Reset Password" %></div>  
+<% end %>  

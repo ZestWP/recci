@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  due_on: 2014-09-27
+  type: 1
+
+two:
+  title: MyString
+  due_on: 2014-09-27
+  type: 1
